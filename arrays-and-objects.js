@@ -246,29 +246,19 @@ for (let i = 0; i < categories.length; i++) { // loop prints all categories, les
   console.log(categories[i].category) // prints each categories based on index value 
 }
 
+//completed last two questions 
+
 // TODO write code to print the total number of prize categories
 console.log(`The total number of prize categories are ${categories.length}`)
 
 // TODO write code to count the total number of laureates from 2017. 
 //   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
 
-let numOfLaureates = nobel_prize_winners_2017
-//let numOfLaureates = nobel_prize_winners_2017.prizes[0].laureates[0]
-let countOfLaureates = []
+let totalLaureates = 0
+categories.forEach(prize => {
+  let laureatesPrize = prize.laureates.length
+  totalLaureates = totalLaureates + laureatesPrize
+})
 
-let totalCountsNobel = nobel_prize_winners_2017.prizes[3].laureates[0].id
-console.log(totalCountsNobel)
+console.log(`There are a total of ${totalLaureates} laureates from 2017`)
 
-// let totalCountsNobel = (nobel_prize_winners_2017.prizes[0].laureates[0].id).length
-// console.log(totalCountsNobel)
-
-for (let i = 0; i < totalCountsNobel.length; i++) { // 
-  //console.log(nobel_prize_winners_2017.prizes[i].laureates[i].id.length)
-  countOfLaureates.push(nobel_prize_winners_2017.prizes[i].laureates[i].id.length)
-}
-for (let i = 3; i < 6; i++) { // 
-  countOfLaureates.push(nobel_prize_winners_2017.prizes[i].laureates[0].id)
-}
-console.log(countOfLaureates)
-
-//testing github
